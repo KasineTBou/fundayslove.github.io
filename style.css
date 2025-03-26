@@ -325,6 +325,20 @@ footer {
     border-radius: 50%; /* Делаем фото круглым */
     margin-bottom: 10px; /* Отступ снизу */
 }
+body {
+    overflow: hidden; /* Или overflow-y: hidden; */
+}
+
+html {
+    overflow: hidden; /* Или overflow-y: hidden; */
+}
+body {
+    height: 100vh; /* Или любое другое значение */
+}
+
+html {
+    height: 100%; /* Или любое другое значение */
+}
 
 @keyframes falling {
     0% {

@@ -10,7 +10,6 @@ body {
     background-size: cover; /* Растягивает изображение на весь фон */
     background-repeat: no-repeat; /* Запрещает повторение изображения */
     background-attachment: fixed; /* Фиксирует фон при прокрутке */
-    /* overflow-x: hidden; <- Убедись, что этого нет, если нужно прокручивать */
 }
 
 /* Заголовки */
@@ -113,13 +112,14 @@ footer {
 /* Стили для галереи */
 .gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto; /* Включаем горизонтальную прокрутку */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    scrollbar-width: thin; /* Для более тонкой полосы прокрутки */
 }
 
 .gallery-item {
-    position: relative;
-    width: 300px;
+    flex: 0 0 auto; /* Элемент не растягивается */
+    width: 300px; /* Укажите ширину изображений */
     margin: 10px;
     overflow: hidden;
     border-radius: 8px;
@@ -325,23 +325,6 @@ footer {
     max-width: 200px; /* Максимальная ширина фото */
     border-radius: 50%; /* Делаем фото круглым */
     margin-bottom: 10px; /* Отступ снизу */
-}
-
-/* Стили для прокрутки (scrollbar) */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 @keyframes falling {

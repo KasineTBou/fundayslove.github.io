@@ -10,6 +10,7 @@ body {
     background-size: cover; /* Растягивает изображение на весь фон */
     background-repeat: no-repeat; /* Запрещает повторение изображения */
     background-attachment: fixed; /* Фиксирует фон при прокрутке */
+    /* overflow-x: hidden; <- Убедись, что этого нет, если нужно прокручивать */
 }
 
 /* Заголовки */
@@ -325,19 +326,22 @@ footer {
     border-radius: 50%; /* Делаем фото круглым */
     margin-bottom: 10px; /* Отступ снизу */
 }
-body {
-    overflow: hidden; /* Или overflow-y: hidden; */
+
+/* Стили для прокрутки (scrollbar) */
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-html {
-    overflow: hidden; /* Или overflow-y: hidden; */
-}
-body {
-    height: 100vh; /* Или любое другое значение */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
-html {
-    height: 100%; /* Или любое другое значение */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 @keyframes falling {
